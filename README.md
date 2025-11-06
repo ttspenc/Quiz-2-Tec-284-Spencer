@@ -1,22 +1,25 @@
 # Quiz-2-Tec-284-Spencer
 
+
+
 from gpiozero import LED, Button
 import time
 
-# 
-red_button = Button(7)     # change pins as needed
-green_button = Button(8)
-blue_button = Button(9)
+# buttons and led
+red_button = Button(25)     
+green_button = Button(18)
+blue_button = Button(23)
 
 red_led = LED(17)
 green_led = LED(27)
 blue_led = LED(22)
 
-print("Program started. Press a button to turn on its color LED.")
+print("Program start")
 
 # main loop
-while True:
-    # Red LED logic
+def main():
+    # Red LED
+    #print("hello")
     if red_button.is_pressed:
         red_led.on()
         print("Red button pressed, red on")
@@ -37,5 +40,13 @@ while True:
     else:
         blue_led.off()
     
-    time.sleep(0.2)  # keeps print messages readable
+    time.sleep(0.2)  
+
+while True:
+    main()
+    
+if __name__ == "__main__":
+    main()
+
+
 
